@@ -10,7 +10,7 @@ let userMessage = null;
 let isResponseGenerating = false;
 
 // API configuration
-const API_PATH = process.env.RENDER_APP_URL || "http://localhost:3000";
+const API_PATH = process.env.RENDER_APP_URL;
 
 const loadChatHistory = async () => {
   try {
