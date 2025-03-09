@@ -18,7 +18,7 @@ module.exports = {
       interpreter: "python3",
       exec_mode: "fork",
       autorestart: true,
-      min_uptime: 5000,
+      min_uptime: 60000,
       out_file: "/app/logs/flask-out.log",
       error_file: "/app/logs/flask-error.log",
       env: {
