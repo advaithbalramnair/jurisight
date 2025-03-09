@@ -10,7 +10,7 @@ let userMessage = null;
 let isResponseGenerating = false;
 
 // API configuration
-const API_PATH = "https://jurisight-9zt6.onrender.com";
+const API_PATH = process.env.RENDER_APP_URL || "http://localhost:3000";
 
 const loadChatHistory = async () => {
   try {

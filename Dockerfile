@@ -24,10 +24,10 @@ RUN npm install
 COPY . .
 
 # Expose necessary ports
-EXPOSE 3000 5000
+EXPOSE 3000
 
 # Install PM2 globally
 RUN npm install -g pm2
 
 # Start both Flask and Node.js servers using PM2
-CMD ["sh", "-c", "pm2 start ecosystem.config.js && tail -f /dev/null"]
+CMD ["pm2-runtime", "start", "ecosystem.config.js"]

@@ -6,6 +6,7 @@ const path = require("path");
 const dotenv = require("dotenv");
 const authRouter = require("./routes/auth");
 const chatbotRouter = require("./routes/chatbot");
+const { createProxyMiddleware } = require("http-proxy-middleware");
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;
@@ -30,6 +31,13 @@ app.get("/", (req, res) => {
 });
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use(
+  "/flask-api",
+  createProxyMiddleware({
+    target: "http://localhost:5000",
+    changeOrigin: true
+  })
+);
 app.use(authRouter);
 app.use(chatbotRouter);
 

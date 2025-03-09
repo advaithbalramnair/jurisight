@@ -8,7 +8,7 @@ const auth = require("../middleware/auth");
 
 dotenv.config();
 
-const FLASK_BASE_URL = process.env.RENDER_APP_URL || "http://localhost:5000";
+const FLASK_BASE_URL = process.env.RENDER_APP_URL + "/flask-api";
 
 const chatbotRouter = express.Router();
 const upload = multer();
