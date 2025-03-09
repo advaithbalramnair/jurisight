@@ -242,6 +242,6 @@ def fetch_form_data(user_id):
     return jsonify(extracted_data), 200
     
 if __name__ == '__main__':
-    port = int(os.environ.get("FLASK_PORT", 5000))
+    port = int(os.environ.get("PORT", 5000))
     serve(app, host="0.0.0.0", port=port)
     print(f"Listening on PORT ${5000}")

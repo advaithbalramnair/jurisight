@@ -1,11 +1,14 @@
 const express = require("express");
 const axios = require("axios");
+const dotenv = require("dotenv");
 const multer = require("multer");
 const FormData = require("form-data");
 const Chat = require("../models/chat");
 const auth = require("../middleware/auth");
 
-const FLASK_BASE_URL = "http://localhost:5000";
+dotenv.config();
+
+const FLASK_BASE_URL = process.env.RENDER_APP_URL || "http://localhost:5000";
 
 const chatbotRouter = express.Router();
 const upload = multer();

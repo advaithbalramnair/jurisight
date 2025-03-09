@@ -22,7 +22,7 @@ module.exports = {
       out_file: "/app/logs/flask-out.log",
       error_file: "/app/logs/flask-error.log",
       env: {
-        PORT: 5000,
+        PORT: process.env.PORT || 5000,
         FLASK_ENV: "production",
         FLASK_APP: "chatbot.py"
       }
