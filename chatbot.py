@@ -33,7 +33,7 @@ pinecone_index_chat = "llamaindex"
 pinecone_index_retrieval = "judgment-search"
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True, origins=["https://jurisight.onrender.com"])
+CORS(app, supports_credentials=True, origins=["https://jurisight-9zt6.onrender.com"])
 
 
 def authenticate_user(f):

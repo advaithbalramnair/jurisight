@@ -10,7 +10,7 @@ dotenv.config();
 
 const authRouter = express.Router();
 
-const redirectUrl = "https://jurisight.onrender.com/api/auth/callback";
+const redirectUrl = "https://jurisight-9zt6.onrender.com/api/auth/callback";
 
 const oAuth2Client = new OAuth2Client(
   process.env.CLIENT_ID,
@@ -60,7 +60,7 @@ authRouter.get("/callback", async (req, res) => {
     }
 
     const jwtToken = jwt.sign({ id: user._id }, process.env.SECRET_KEY);
-    res.redirect(`https://jurisight.onrender.com/index.html?token=${jwtToken}`);
+    res.redirect(`https://jurisight-9zt6.onrender.com/index.html?token=${jwtToken}`);
   } catch (e) {
     console.error("Error during Google Authentication process:", e);
     res.status(500).json({ error: "Failed to authenticate with Google." });
