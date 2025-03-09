@@ -5,7 +5,9 @@ const toggleThemeButton = document.querySelector("#toggle-theme-button");
 const deleteChatButton = document.querySelector("#delete-chat-button");
 const urlParams = new URLSearchParams(window.location.search);
 const token = urlParams.get("token");
+const dotenv = require("dotenv");
 
+dotenv.config();
 let userMessage = null;
 let isResponseGenerating = false;
 
